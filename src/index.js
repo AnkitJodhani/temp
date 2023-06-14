@@ -59,7 +59,7 @@ class Game extends React.Component {
     }
     return (
       <React.Fragment>
-        <h1>Tic Tac Toe</h1>
+        <h1>Tic Tac Toe Ankits game</h1>
         <section className="game">
           <GameInfo
             status={status}
