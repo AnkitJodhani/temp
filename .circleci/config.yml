@@ -10,8 +10,8 @@ jobs:
           name: we are just testing it 
           command: |
             git clone https://github.com/AnkitJodhani/temp2.git
-            git config user.email "ankitjodhani1903@gmail.com"
-            git config user.name "AnkitJodhani"
+            git config --global user.email "ankitjodhani1903@gmail.com"
+            git config --global user.name "AnkitJodhani"
             cd temp2
             sed -i "s/TAG/build-$CIRCLE_BUILD_NUM/g" deployment.yaml
             git add .
