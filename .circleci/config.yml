@@ -3,12 +3,13 @@ version: 2.1
 jobs:
   testing:
     docker:
-      - image: cimg/node:20.3.1
+      - image: cimg/node:20.3.1 
     steps:
       - checkout
       - run:
           name: we are just testing it 
           command: |
+            npm install
             npm run test
 
   build_push:
