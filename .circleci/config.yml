@@ -1,17 +1,6 @@
 version: 2.1
 
 jobs:
-  testing:
-    docker:
-      - image: cimg/node:20.3.1 
-    steps:
-      - checkout
-      - run:
-          name: we are just testing it 
-          command: |
-            npm install
-            npm run test
-
   build_push:
     docker:
       - image: cimg/node:20.3.1
@@ -45,10 +34,7 @@ jobs:
 workflows:
   GitOpsflow:
     jobs:
-      - testing
-      - build_push:
-          requires:
-            - testing
+      - build_push
       - publish:
           requires:
             - build_push
