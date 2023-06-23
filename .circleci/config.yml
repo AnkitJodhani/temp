@@ -9,7 +9,7 @@ jobs:
       - run:
           name: Lets build and push 
           command: |
-            version = build-$CIRCLE_BUILD_NUM
+            version="build-$CIRCLE_BUILD_NUM"
             docker build -t ankitjodhani/tic-tac-toe:$version .
             echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
             docker push ankitjodhani/tic-tac-toe:$version
