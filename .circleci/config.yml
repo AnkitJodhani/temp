@@ -14,7 +14,7 @@ jobs:
       - run:
           name: Lets build and push 
           command: |
-            docker build -t ankitjodhani/tic-tac-toe:$version .
+            docker build --tag ankitjodhani/tic-tac-toe:$version .
             echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
             docker push ankitjodhani/tic-tac-toe:$version
 
