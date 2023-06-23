@@ -6,6 +6,7 @@ jobs:
       - image: cimg/node:20.3.1
     steps:
       - checkout
+      - setup_remote_docker
       - run:
           name: Lets build and push 
           command: |
@@ -19,6 +20,7 @@ jobs:
       - image: cimg/base:2023.06
     steps:
       - checkout
+      - setup_remote_docker
       - run:
           name: we are just testing it 
           command: |
