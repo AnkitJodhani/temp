@@ -24,7 +24,8 @@ jobs:
       - run:
           name: we are just testing it 
           command: |
-            jugad="$CIRCLE_BUILD_NUM"-1
+            jugad="$CIRCLE_BUILD_NUM"
+            jugad=$jugad-1
             git clone https://github.com/AnkitJodhani/temp2.git
             git config --global user.email "ankitjodhani1903@gmail.com"
             git config --global user.name "AnkitJodhani"
