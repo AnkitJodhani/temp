@@ -10,7 +10,7 @@ jobs:
       - run:
           name: Lets build and push 
           command: |
-            version="build-$CIRCLE_BUILD_NUM"
+            version="build-$pipeline.number"
             echo $version
             docker build -t ankitjodhani/tic-tac-toe:$version .
             echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
@@ -25,10 +25,7 @@ jobs:
       - run:
           name: we are just testing it 
           command: |
-            TAG=$CIRCLE_PREVIOUS_BUILD_NUM
-            echo $TAG
-            echo $TAG
-            echo $TAG
+            TAG=$pipeline.number
             git clone https://github.com/AnkitJodhani/temp2.git
             git config --global user.email "ankitjodhani1903@gmail.com"
             git config --global user.name "AnkitJodhani"
